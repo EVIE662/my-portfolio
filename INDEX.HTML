@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everlyne Atsing'a Mulama Portfolio</title> <!-- Updated title for clarity -->
+    <link rel="stylesheet" href="style.css"> <!-- Updated stylesheet link to lowercase for consistency -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <img src="logo.eve.jpg" class="logo" alt="Everlyne's Logo"> <!-- Added alt text for accessibility -->
+                <ul>
+                    <!-- Navigation menu items -->
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-text">
+            <p>Web Developer</p> <!-- Standardized capitalization -->
+            <h1>Hi, I am <span>Everlyne</span> Mulama<br>From Kenya</h1>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="image/img_20200128_153509.jpg" alt="Everlyne Mulama"> <!-- Added alt text for accessibility -->
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>Hello! I'm Everlyne Mulama, a passionate and dedicated beginner web developer with a keen interest in creating dynamic and user-friendly websites. I recently embarked on this exciting journey into web development and am eager to apply my skills and knowledge to real-world projects.
+                    
+                    My background includes a solid foundation in HTML, CSS, and JavaScript, and I'm continually expanding my expertise through hands-on projects and ongoing learning. I'm particularly fascinated by responsive design and enjoy experimenting with new technologies and frameworks to enhance user experiences.
+                    
+                    Aside from coding, I love problem-solving and take pride in finding efficient and creative solutions to challenges. I thrive in collaborative environments and am always open to feedback and new ideas to improve my craft.
+                    
+                    When I’m not coding, you might find me exploring tech blogs, diving into the latest development trends, or working on personal projects to refine my skills. I’m excited to contribute to the web development community and am always looking for opportunities to grow and collaborate with fellow developers.
+                    
+                    Thank you for visiting my profile! If you’re interested in working together or just want to chat about web development, feel free to reach out.</p>
+
+                    <!-- Tab navigation links -->
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <!-- Tab contents -->
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>CSS</li>
+                            <li><span>JavaScript</span><br>Version Control</li>
+                            <li><span>HTML</span><br>Database</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024</span><br>Personal Portfolio</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2024</span><br>Web Development</li>
+                            <li><span>2024</span><br>Database</li>
+                            <li><span>2024</span><br>Responsive Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--services-->
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My Services</h1>
+            <div class="services-list"></div>
+            <div>
+                <h2>Web development</h2>
+                <p>Static Website Design and Development</p>
+                <p>Website Layout and Styling</p>
+                <p>Responsive Design</p>
+                <p>Landing Pages:</p>
+                <p>HTML Email Templates</p>
+                <a href="learn more"></a>
+         </div>
+     </div>
+
+        </div>
+    </div>
+    <!-- JavaScript for tab functionality -->
+    <script>
+        // Function to open a specific tab and close others
+        function opentab(tabname) {
+            // Get all tab links and contents
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            // Remove "active-link" class from all tab links
+            for (var tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+
+            // Remove "active-tab" class from all tab contents
+            for (var tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+
+            // Add "active-link" class to the clicked tab link
+            document.querySelector(`.tab-links[onclick="opentab('${tabname}')"]`).classList.add("active-link");
+            
+            // Add "active-tab" class to the relevant tab content
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
